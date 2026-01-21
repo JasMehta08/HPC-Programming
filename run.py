@@ -1,3 +1,4 @@
+import os
 import csv
 import sys
 import subprocess
@@ -7,6 +8,9 @@ from collections import defaultdict
 EXECUTABLE = "./vector_triad"        # compiled binary file
 NUM_RUNS = 10                         # number of repetitions
 OUTPUT_CSV = "results/avg_algo_times.csv"
+
+# Ensure results directory exists
+os.makedirs(os.path.dirname(OUTPUT_CSV), exist_ok=True)
 
 # Storage for results, Keyed by problem size
 results = defaultdict(lambda: {
