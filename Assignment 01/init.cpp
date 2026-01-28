@@ -21,3 +21,10 @@ void init_vectors(int Np, double **x, double **y, double **v, double **S) {
         (*S)[i] = 0.0;
     }
 }
+
+void free_vectors(double *x, double *y, double *v, double *S) {
+    free(x);
+    free(y);
+    free(v);
+    free(S);
+}
